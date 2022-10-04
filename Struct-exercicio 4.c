@@ -4,23 +4,29 @@ Miguel Cardoso Malton 03/10/22 - Lista de exercicio 4- structs
 
 *******************************************************************************/
 #include <stdio.h>
+
 typedef struct {
-    long codigo;
-    float preco;
+       long codigo;
+       char nome[100];
+       float preco;
 } Produto;
 
 int main()
 {
     Produto p;
-    printf("Digite codigo, nome preco: ");
-    scanf("%ld %.2f", &p.codigo, &p.preco);
     
-    printf("Valores digitados\n");
-    printf("%ld  %.2f", p.codigo, p.preco);
+    // Entrada
+    printf("Digite codigo, nome e preco");
+    scanf ("%ld %s %f", &p.codigo, p.nome, &p.preco);
     
-    if (p.preco < 4) printf ("Produto em promoção");
-    else             printf ("Produto cadastrado");
-    
+    // Saídas
+    printf("Valores Digitados\n");
+    printf ("%ld %s %.2f", p.codigo, p.nome, p.preco);
+
+    if (p.preco < 4) printf ("Produto em Promocao");
+    else             printf ("Produto Cadastrado");  
 
     return 0;
 }
+
+
